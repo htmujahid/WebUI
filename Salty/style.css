@@ -16,3 +16,11 @@ li, p{
 .hide-scrollbar::-webkit-scrollbar { 
     display: none;  /* Safari and Chrome */
 }
+
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }

@@ -7,7 +7,7 @@
 
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="style.css" />
-        <title>Document</title>
+        <title>Salty</title>
     </head>
     <body>
         <!-- navbar -->
@@ -133,10 +133,10 @@
         <section class="container mx-auto">
             <div class="">
                 <h2 class="text-5xl font-semibold w-96">Find Popular Destination</h2>
-                <div class="overflow-hidden">
-                    <div id="carousel-group" class="flex mt-10 gap-8 justify-items-center overflow-auto hide-scrollbar">
+                <div class="overflow-hidden relative">
+                    <div id="carousel-group" class="flex mt-10 gap-8 justify-items-center overflow-auto hide-scrollbar unselectable">
                         <div class="bg-white p-4 rounded-3xl shadow-sm flex-shrink-0 w-fit">
-                            <img src="./assets/images/sea.png" alt="">
+                            <img src="./assets/images/sea.png" alt="" draggable="false">
                             <h5 class="text-2xl font-semibold py-4">Mountain Hiking Tour</h5>
                             <p class="text-sm">Mountain Hiking Tour</p>
                             <div class="flex justify-between py-6">
@@ -145,7 +145,7 @@
                             </div>
                         </div>
                         <div class="bg-white p-4 rounded-3xl shadow-sm flex-shrink-0 w-fit">
-                            <img src="./assets/images/machu.png" alt="">
+                            <img src="./assets/images/machu.png" alt="" draggable="false" >
                             <h5 class="text-2xl font-semibold py-4">Machu Picchu, Peru</h5>
                             <p class="text-sm">Machu Picchu, Peru</p>
                             <div class="flex justify-between py-6">
@@ -154,7 +154,7 @@
                             </div>
                         </div>
                         <div class="bg-white p-4 rounded-3xl shadow-sm flex-shrink-0 w-fit">
-                            <img src="./assets/images/canyon.png" alt="">
+                            <img src="./assets/images/canyon.png" alt="" draggable="false">
                             <h5 class="text-2xl font-semibold py-4">The Grand Canyon</h5>
                             <p class="text-sm">Mountain Hiking Tour</p>
                             <div class="flex justify-between py-6">
@@ -163,7 +163,7 @@
                             </div>
                         </div>
                         <div class="bg-white p-4 rounded-3xl shadow-sm flex-shrink-0 w-fit">
-                            <img src="./assets/images/sea.png" alt="">
+                            <img src="./assets/images/sea.png" alt="" draggable="false">
                             <h5 class="text-2xl font-semibold py-4">Mountain Hiking Tour</h5>
                             <p class="text-sm">Mountain Hiking Tour</p>
                             <div class="flex justify-between py-6">
@@ -172,7 +172,7 @@
                             </div>
                         </div>
                         <div class="bg-white p-4 rounded-3xl shadow-sm flex-shrink-0 w-fit">
-                            <img src="./assets/images/machu.png" alt="">
+                            <img src="./assets/images/machu.png" alt="" draggable="false">
                             <h5 class="text-2xl font-semibold py-4">Machu Picchu, Peru</h5>
                             <p class="text-sm">Machu Picchu, Peru</p>
                             <div class="flex justify-between py-6">
@@ -181,7 +181,7 @@
                             </div>
                         </div>
                         <div class="bg-white p-4 rounded-3xl shadow-sm flex-shrink-0 w-fit">
-                            <img src="./assets/images/canyon.png" alt="">
+                            <img src="./assets/images/canyon.png" alt="" draggable="false">
                             <h5 class="text-2xl font-semibold py-4">The Grand Canyon</h5>
                             <p class="text-sm">Mountain Hiking Tour</p>
                             <div class="flex justify-between py-6">
@@ -190,6 +190,8 @@
                             </div>
                         </div>
                     </div>
+                    <div id="prev" class="absolute top-48"><img src="./assets/icons/arrow-left.svg" alt=""></div>
+                    <div id="next" class="absolute top-48 right-0"><img src="./assets/icons/arrow-right.svg" alt=""></div>
                 </div>
             </div>
         </section>

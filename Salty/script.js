@@ -8,66 +8,71 @@ navToggle.addEventListener('click', () => {
 const carouselGroup = document.getElementById('carousel-group');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
-
-
-let translation = 0;
-
+let pressed = false;
+prev.style.display = 'none';
 
 next.addEventListener('click', () => {
-    if (translation < 1278) {
-        translation += 426;
+    if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
+        next.style.display = 'none';
     }
-    else
-    {
-        next.disabled = true;
-    }
+    prev.style.display = 'block';
     carouselGroup.scrollTo({
         top: 0,
-        left: translation,
+        left: carouselGroup.scrollLeft + 426,
         behavior: 'smooth'
     })
-    prev.disabled = false;
 })
 
 prev.addEventListener('click', () => {
-    if (translation === 0) {
-        prev.disabled = true;
+    if (carouselGroup.scrollLeft === 0) {
+        prev.style.display = 'none';
     }
-    else
-    {
-        translation -= 426;
-    }
-
+    next.style.display = 'block';
     carouselGroup.scrollTo({
         top: 0,
-        left: translation,
-        behavior: 'smooth'
-    })
-    next.disabled = false;
-})
-
-window.addEventListener('onload', () => {
-    if (window.innerWidth < 768) {
-        translation = 0
-    } else if (window.innerWidth < 1024) {
-        translation = 426
-    } else {
-        translation = 852
-    }
-})
-
-window.addEventListener ('resize', () => {
-    console.log(carouselGroup.scrollLeft);
-    if (window.innerWidth < 768) {
-        translation = 0
-    } else if (window.innerWidth < 1024) {
-        translation = 426
-    } else {
-        translation = 852
-    }
-    carouselGroup.scrollTo({
-        top: 0,
-        left: translation,
+        left: carouselGroup.scrollLeft - 426,
         behavior: 'smooth'
     })
 })
+
+carouselGroup.addEventListener('scroll', () => {
+        if (carouselGroup.scrollLeft === 0) {
+            prev.style.display = 'none';
+        } else {
+            prev.style.display = 'block';
+        }
+        if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
+            next.style.display = 'none';
+        } else {
+            next.style.display = 'block';
+        }
+    }
+)
+
+carouselGroup.addEventListener("mousedown", (e) => {
+    pressed = true;
+    carouselGroup.style.cursor = "grabbing";
+});
+
+carouselGroup.addEventListener("mouseenter", () => {
+    carouselGroup.style.cursor = "grab";
+});
+
+carouselGroup.addEventListener("mouseleave", () => {
+    carouselGroup.style.cursor = "default";
+});
+
+carouselGroup.addEventListener("mouseup", () => {
+    carouselGroup.style.cursor = "grab";
+    pressed = false;
+});
+
+carouselGroup.addEventListener("mousemove", (e) => {
+    if (pressed) {
+        carouselGroup.scrollTo({
+            top: 0,
+            left: carouselGroup.scrollLeft - e.movementX * 10,
+            behavior: 'smooth'
+        })
+    }
+});
