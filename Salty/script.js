@@ -9,31 +9,65 @@ const carouselGroup = document.getElementById('carousel-group');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 
+
 let translation = 0;
 
-if(translation === -2130) {
-    next.disabled = true;
-} else {
-    next.disabled = false;
-}
 
-prev.disabled = true;
 next.addEventListener('click', () => {
-    translation = translation - 426;
-    console.log(translation);
-    carouselGroup.style.transform = `translateX(${translation}px)`;
-    if(translation === -1278) {
+    if (translation < 1278) {
+        translation += 426;
+    }
+    else
+    {
         next.disabled = true;
     }
+    carouselGroup.scrollTo({
+        top: 0,
+        left: translation,
+        behavior: 'smooth'
+    })
     prev.disabled = false;
 })
 
 prev.addEventListener('click', () => {
-    translation = translation + 426;
-    console.log(translation);
-    carouselGroup.style.transform = `translateX(${translation}px)`;
-    if(translation === 0) {
+    if (translation === 0) {
         prev.disabled = true;
     }
+    else
+    {
+        translation -= 426;
+    }
+
+    carouselGroup.scrollTo({
+        top: 0,
+        left: translation,
+        behavior: 'smooth'
+    })
     next.disabled = false;
+})
+
+window.addEventListener('onload', () => {
+    if (window.innerWidth < 768) {
+        translation = 0
+    } else if (window.innerWidth < 1024) {
+        translation = 426
+    } else {
+        translation = 852
+    }
+})
+
+window.addEventListener ('resize', () => {
+    console.log(carouselGroup.scrollLeft);
+    if (window.innerWidth < 768) {
+        translation = 0
+    } else if (window.innerWidth < 1024) {
+        translation = 426
+    } else {
+        translation = 852
+    }
+    carouselGroup.scrollTo({
+        top: 0,
+        left: translation,
+        behavior: 'smooth'
+    })
 })
