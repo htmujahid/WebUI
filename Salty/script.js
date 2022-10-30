@@ -9,6 +9,9 @@ const carouselGroup = document.getElementById('carousel-group');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 let pressed = false;
+let startX;
+let scrollLeft;
+
 prev.style.display = 'none';
 
 next.addEventListener('click', () => {
@@ -52,14 +55,17 @@ carouselGroup.addEventListener('scroll', () => {
 carouselGroup.addEventListener("mousedown", (e) => {
     pressed = true;
     carouselGroup.style.cursor = "grabbing";
+    startX = e.pageX - carouselGroup.offsetLeft;
+    scrollLeft = carouselGroup.scrollLeft;
 });
 
-carouselGroup.addEventListener("mouseenter", () => {
-    carouselGroup.style.cursor = "grab";
-});
+// carouselGroup.addEventListener("mouseenter", () => {
+//     carouselGroup.style.cursor = "grab";
+// });
 
 carouselGroup.addEventListener("mouseleave", () => {
     carouselGroup.style.cursor = "default";
+    pressed = false;
 });
 
 carouselGroup.addEventListener("mouseup", () => {
@@ -68,11 +74,32 @@ carouselGroup.addEventListener("mouseup", () => {
 });
 
 carouselGroup.addEventListener("mousemove", (e) => {
-    if (pressed) {
-        carouselGroup.scrollTo({
-            top: 0,
-            left: carouselGroup.scrollLeft - e.movementX * 10,
-            behavior: 'smooth'
-        })
-    }
+    if (!pressed) return
+        e.preventDefault();
+        const x = e.pageX - carouselGroup.offsetLeft;
+        const walk = (x - startX);
+        carouselGroup.scrollLeft = scrollLeft - walk;
 });
+
+// carouselGroup.addEventListener('mousedown', (e) => {
+//   pressed = true;
+//   startX = e.pageX - carouselGroup.offsetLeft;
+//   scrollLeft = carouselGroup.scrollLeft;
+//   carouselGroup.style.cursor = 'grabbing';
+// });
+
+// carouselGroup.addEventListener('mouseleave', () => {
+//   pressed = false;
+// });
+
+// carouselGroup.addEventListener('mouseup', () => {
+//   pressed = false;
+// });
+// carouselGroup.addEventListener('mousemove', (e) => {
+//   if(!pressed) return;
+//   e.preventDefault();
+//   const x = e.pageX - carouselGroup.offsetLeft;
+//   const walk = (x - startX) ; //scroll-fast
+//   carouselGroup.scrollLeft = scrollLeft - walk;
+//   console.log(walk);
+// });
