@@ -44,7 +44,7 @@ carouselGroup.addEventListener('scroll', () => {
         } else {
             prev.style.display = 'block';
         }
-        if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
+        if (carouselGroup.scrollLeft >= carouselGroup.scrollWidth - carouselGroup.clientWidth - 10) {
             next.style.display = 'none';
         } else {
             next.style.display = 'block';
@@ -52,16 +52,13 @@ carouselGroup.addEventListener('scroll', () => {
     }
 )
 
+
 carouselGroup.addEventListener("mousedown", (e) => {
     pressed = true;
     carouselGroup.style.cursor = "grabbing";
     startX = e.pageX - carouselGroup.offsetLeft;
     scrollLeft = carouselGroup.scrollLeft;
 });
-
-// carouselGroup.addEventListener("mouseenter", () => {
-//     carouselGroup.style.cursor = "grab";
-// });
 
 carouselGroup.addEventListener("mouseleave", () => {
     carouselGroup.style.cursor = "default";
@@ -80,26 +77,3 @@ carouselGroup.addEventListener("mousemove", (e) => {
         const walk = (x - startX);
         carouselGroup.scrollLeft = scrollLeft - walk;
 });
-
-// carouselGroup.addEventListener('mousedown', (e) => {
-//   pressed = true;
-//   startX = e.pageX - carouselGroup.offsetLeft;
-//   scrollLeft = carouselGroup.scrollLeft;
-//   carouselGroup.style.cursor = 'grabbing';
-// });
-
-// carouselGroup.addEventListener('mouseleave', () => {
-//   pressed = false;
-// });
-
-// carouselGroup.addEventListener('mouseup', () => {
-//   pressed = false;
-// });
-// carouselGroup.addEventListener('mousemove', (e) => {
-//   if(!pressed) return;
-//   e.preventDefault();
-//   const x = e.pageX - carouselGroup.offsetLeft;
-//   const walk = (x - startX) ; //scroll-fast
-//   carouselGroup.scrollLeft = scrollLeft - walk;
-//   console.log(walk);
-// });
