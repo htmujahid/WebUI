@@ -12,10 +12,12 @@ let pressed = false;
 let startX;
 let scrollLeft;
 
-prev.style.display = 'none';
+if( window.innerWidth > 640 ) {
+    prev.style.display = 'none';
+}
 
 next.addEventListener('click', () => {
-    if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
+    if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth && window.innerWidth > 640) {
         next.style.display = 'none';
     }
     prev.style.display = 'block';
@@ -27,7 +29,7 @@ next.addEventListener('click', () => {
 })
 
 prev.addEventListener('click', () => {
-    if (carouselGroup.scrollLeft === 0) {
+    if (carouselGroup.scrollLeft === 0 && window.innerWidth > 640) {
         prev.style.display = 'none';
     }
     next.style.display = 'block';
@@ -39,12 +41,12 @@ prev.addEventListener('click', () => {
 })
 
 carouselGroup.addEventListener('scroll', () => {
-        if (carouselGroup.scrollLeft === 0) {
+        if (carouselGroup.scrollLeft === 0 && window.innerWidth > 640) {
             prev.style.display = 'none';
         } else {
             prev.style.display = 'block';
         }
-        if (carouselGroup.scrollLeft >= carouselGroup.scrollWidth - carouselGroup.clientWidth - 10) {
+        if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth && window.innerWidth > 640) {
             next.style.display = 'none';
         } else {
             next.style.display = 'block';
