@@ -46,8 +46,9 @@ carouselGroup.addEventListener('scroll', () => {
         } else {
             prev.style.display = 'block';
         }
-        if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth && window.innerWidth > 640) {
+        if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
             next.style.display = 'none';
+            console.log(carouselGroup.scrollWidth, carouselGroup.clientWidth);
         } else {
             next.style.display = 'block';
         }
