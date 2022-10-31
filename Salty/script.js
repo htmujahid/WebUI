@@ -17,7 +17,7 @@ if( window.innerWidth > 640 ) {
 }
 
 next.addEventListener('click', () => {
-    if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth && window.innerWidth > 640) {
+    if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
         next.style.display = 'none';
     }
     prev.style.display = 'block';
