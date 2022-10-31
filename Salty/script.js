@@ -17,11 +17,9 @@ if( window.innerWidth > 640 ) {
 }
 
 next.addEventListener('click', () => {
-    if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
+    if (Math.ceil(carouselGroup.scrollLeft) === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
         next.style.display = 'none';
-        console.log(carouselGroup.scrollLeft, carouselGroup.scrollWidth, carouselGroup.clientWidth);
     }
-    console.log(carouselGroup.scrollLeft, carouselGroup.scrollWidth, carouselGroup.clientWidth);
     prev.style.display = 'block';
     carouselGroup.scrollTo({
         top: 0,
@@ -48,11 +46,9 @@ carouselGroup.addEventListener('scroll', () => {
         } else {
             prev.style.display = 'block';
         }
-        if (carouselGroup.scrollLeft === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
+        if (Math.ceil(carouselGroup.scrollLeft) === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
             next.style.display = 'none';        
-            console.log(carouselGroup.scrollLeft, carouselGroup.scrollWidth, carouselGroup.clientWidth);
         } else {
-            console.log(carouselGroup.scrollLeft, carouselGroup.scrollWidth, carouselGroup.clientWidth);
             next.style.display = 'block';
         }
     }
