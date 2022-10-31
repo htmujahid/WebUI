@@ -12,9 +12,10 @@ let pressed = false;
 let startX;
 let scrollLeft;
 
-if( window.innerWidth > 640 ) {
-    prev.style.display = 'none';
-}
+prev.style.display = 'none';
+
+const children = carouselGroup.children;
+const childrenWidth = children[1].offsetLeft - children[0].offsetLeft;
 
 next.addEventListener('click', () => {
     if (Math.ceil(carouselGroup.scrollLeft) === carouselGroup.scrollWidth - carouselGroup.clientWidth) {
@@ -23,7 +24,7 @@ next.addEventListener('click', () => {
     prev.style.display = 'block';
     carouselGroup.scrollTo({
         top: 0,
-        left: carouselGroup.scrollLeft + 426,
+        left: carouselGroup.scrollLeft + childrenWidth,
         behavior: 'smooth'
     })
 })
@@ -35,7 +36,7 @@ prev.addEventListener('click', () => {
     next.style.display = 'block';
     carouselGroup.scrollTo({
         top: 0,
-        left: carouselGroup.scrollLeft - 426,
+        left: carouselGroup.scrollLeft - childrenWidth,
         behavior: 'smooth'
     })
 })
