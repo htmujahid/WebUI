@@ -29,7 +29,7 @@ next.addEventListener('click', () => {
 })
 
 prev.addEventListener('click', () => {
-    if (carouselGroup.scrollLeft === 0 && window.innerWidth > 640) {
+    if (carouselGroup.scrollLeft === 0) {
         prev.style.display = 'none';
     }
     next.style.display = 'block';
@@ -41,7 +41,7 @@ prev.addEventListener('click', () => {
 })
 
 carouselGroup.addEventListener('scroll', () => {
-        if (carouselGroup.scrollLeft === 0 && window.innerWidth > 640) {
+        if (carouselGroup.scrollLeft === 0) {
             prev.style.display = 'none';
         } else {
             prev.style.display = 'block';
