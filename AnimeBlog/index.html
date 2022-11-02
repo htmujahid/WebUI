@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AnimeBlog</title>
+        <!-- tailwind development link -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- poppins font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins&family=Varela&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div>
+            <nav
+                class="container mx-auto flex flex-col sm:flex-row justify-center sm:justify-between gap-4 items-center my-2 py-2"
+            >
+                <div>
+                    <img src="assets/logo/Gates.svg" alt="" />
+                </div>
+                <div class="flex-1"></div>
+                <div>
+                    <ul class="flex gap-2 sm:gap-6 items-center text-sm">
+                        <li class="px-4 py-1 flex-shrink-0">
+                            <a href="./index.html">Home</a>
+                        </li>
+                        <li class="px-4 py-1 flex-shrink-0">
+                            <a href="./blog.html">Blog</a>
+                        </li>
+                        <li
+                            class="text-white bg-black rounded px-4 py-1 flex-shrink-0"
+                        >
+                            <a href="./signup.html">Sign up</a>
+                        </li>
+                        <li class="px-4 py-1 flex-shrink-0">
+                            <a href="./login.html">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="background-img">
+            <div
+                class="container mx-auto flex items-center h-full text-white text-center sm:text-left"
+            >
+                <div>
+                    <div>
+                        <h1
+                            id="main-hading"
+                            class="text-6xl font-bold sm:text-8xl leading-auto sm:leading-[95px] tracking-[3px]"
+                        >
+                            Welcome to Gates
+                        </h1>
+                    </div>
+                    <div class="my-6">
+                        <p
+                            class="text-lg leading-7 tracking-[0.5px] text-zinc-50"
+                        >
+                            Get the latest news on your favourite mangas, anime
+                            and <br />
+                            manhwa around the world!
+                        </p>
+                    </div>
+                    <div>
+                        <Subscribe
+                            name="email"
+                            id="email"
+                            placeholder="Enter Your Email"
+                        />
+                        <div class="text-white">
+                            <div
+                                class="w-full sm:w-96 h-12 bg-zinc-50 flex items-center"
+                            >
+                                <div
+                                    class="w-24 h-6 flex items-center justify-center bg-black text-white text-[9px] font-semibold mx-3 flex-shrink-0"
+                                >
+                                    Subscribe
+                                </div>
+                                <div
+                                    class="flex items-center justify-center text-[#313131] text-xs font-medium mx-3 w-full"
+                                >
+                                    <input
+                                        type="email"
+                                        name="email"
+                                        id="email"
+                                        placeholder="Enter Your Email"
+                                        class="focus:outline-none w-full"
+                                    />
+                                </div>
+                                <div
+                                    class="flex items-center justify-center text-[#313131] text-xs font-medium mx-3 flex-shrink-0"
+                                >
+                                    <form action="">
+                                        <button type="submit">
+                                            <img
+                                                src="assets/icon/arrow-right.svg"
+                                                alt=""
+                                            />
+                                        </button>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="container mx-auto mt-16">
+            <div>
+                <div  class="border-b ">
+                    <h1  class="text-2xl font-semibold">New & Trendy</h1>
+                    <div  class="border-b-2 border-black w-6 mt-1"></div>
+                </div>
+            </div>
+            <div class="mt-5">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class='h-full bg-center bg-cover h-96'  style="background-image: url('./assets/img/Rectangle0.png')">
+                    </div>
+                    <div class='h-full bg-center bg-cover h-96'  style="background-image: url('./assets/img/Rectangle1.png')">
+                        <div class='flex items-center justify-center w-full sm:w-[471px] mx-auto py-16 px-4'>
+                            <div class=''>
+                                <div class='text-lg font-medium flex gap-3'>
+                                    <p>Fantasy</p> . 
+                                    <p class='text-gray-800 text-[#6E6E6E]'>1 Month Ago</p>
+                                </div>
+                                <div>
+                                    <h1 class='font-bold text-2xl'>Attack on Titans</h1>
+                                </div>
+                                <div>
+                                    <p class='text-xl leading-8 text-[#6E6E6E]'>The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning</p>
+                                </div>
+                                <div class='flex mt-6'>
+                                    <div class='text-[#6E6E6E]'>
+                                        12 Min Read
+                                    </div>
+                                    <div class="flex-1"></div>
+                                    <div class='font-bold'>
+                                        <Link to='/'>
+                                            Read Full <img src="assets/icon/arrow-right.svg" alt="" class='inline'/>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='h-full bg-center bg-cover h-96 order-4 lg:order-3'  style="background-image: url('./assets/img/Rectangle2.png')">
+                        <div class='flex items-center justify-center w-full sm:w-[471px] mx-auto py-16 px-4'>
+                            <div class=''>
+                                <div class='text-lg font-medium flex gap-3'>
+                                    <p>Fantasy</p> . 
+                                    <p class='text-gray-800 text-[#6E6E6E]'>1 Month Ago</p>
+                                </div>
+                                <div>
+                                    <h1 class='font-bold text-2xl'>Attack on Titans</h1>
+                                </div>
+                                <div>
+                                    <p class='text-xl leading-8 text-[#6E6E6E]'>The CSS Grid Layout Module offers a grid-based layout system, with rows and columns, making it easier to design web pages without having to use floats and positioning</p>
+                                </div>
+                                <div class='flex mt-6'>
+                                    <div class='text-[#6E6E6E]'>
+                                        12 Min Read
+                                    </div>
+                                    <div class="flex-1"></div>
+                                    <div class='font-bold'>
+                                        <Link to='/'>
+                                            Read Full <img src="assets/icon/arrow-right.svg" alt="" class='inline'/>
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='h-full bg-center bg-cover h-96 order-3 lg:order-4'  style="background-image: url('./assets/img/Rectangle0.png')">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div  class="mt-16">
+            <div  class="container mx-auto">
+                <div>
+                    <div  class="border-b ">
+                        <h1  class="text-2xl font-semibold">Now Trending</h1>
+                        <div  class="border-b-2 border-black w-6 mt-1"></div>
+                    </div>
+                </div>
+                <div  class="flex justify-between mt-5 gap-6 overflow-x-scroll hide-scrollbar unselectable carousel-group">
+                    <div>
+                        <div  class="">
+                            <div>
+                                <img src="assets/img/Rectangle4.png" alt="" />
+                            </div>
+                            <div  class="w-80 mx-auto py-5">
+                                <div  class="flex text-xs font-medium">
+                                    <p>Fantasy</p> . 
+                                    <p  class="text-[#6e6e6e]">1 Month Ago</p>
+                                </div>
+                                <div>
+                                    <h1  class="text-lg font-bold py-2">Attack on Titans</h1>
+                                </div>
+                                <div>
+                                    <p  class="text-sm text-[#6e6e6e]">lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.</p>
+                                </div>
+                                <div  class="flex text-xs pt-4">
+                                    <div><p  class=" text-[#6e6e6e]">12 Min Read</p></div>
+                                    <div  class="flex-1"></div>
+                                    <div>
+                                         <a href="">
+                                            <p  class="font-bold">Read Full </p>
+                                         </a>                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                    <div>
+                        <div  class="">
+                            <div>
+                                <img src="assets/img/Rectangle5.png" alt="" />
+                            </div>
+                            <div  class="w-80 mx-auto py-5">
+                                <div  class="flex text-xs font-medium">
+                                    <p>Fantasy</p> . 
+                                    <p  class="text-[#6e6e6e]">1 Month Ago</p>
+                                </div>
+                                <div>
+                                    <h1  class="text-lg font-bold py-2">Dr. Stone</h1>
+                                </div>
+                                <div>
+                                    <p  class="text-sm text-[#6e6e6e]">lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.</p>
+                                </div>
+                                <div  class="flex text-xs pt-4">
+                                    <div><p  class=" text-[#6e6e6e]">12 Min Read</p></div>
+                                    <div  class="flex-1"></div>
+                                    <div>
+                                         <a href="">
+                                            <p  class="font-bold">Read Full </p>
+                                         </a>                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>            
+                    <div>
+                        <div  class="">
+                            <div>
+                                <img src="assets/img/Rectangle6.png" alt="" />
+                            </div>
+                            <div  class="w-80 mx-auto py-5">
+                                <div  class="flex text-xs font-medium">
+                                    <p>Fantasy</p> . 
+                                    <p  class="text-[#6e6e6e]">1 Month Ago</p>
+                                </div>
+                                <div>
+                                    <h1  class="text-lg font-bold py-2">Second Chance</h1>
+                                </div>
+                                <div>
+                                    <p  class="text-sm text-[#6e6e6e]">lit. Phasellus aliquet nibh id iaculis pharetra. Maecenas  eleifend sed ex. Donec quis magna sed felis elementum blandit nec quis sem. Maecen.</p>
+                                </div>
+                                <div  class="flex text-xs pt-4">
+                                    <div><p  class=" text-[#6e6e6e]">12 Min Read</p></div>
+                                    <div  class="flex-1"></div>
+                                    <div>
+                                         <a href="">
+                                            <p  class="font-bold">Read Full </p>
+                                         </a>                
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container mx-auto">
+            <div class="mt-16">
+                <div>
+                    <div  class="border-b ">
+                        <h1  class="text-2xl font-semibold">Short Reads</h1>
+                        <div  class="border-b-2 border-black w-6 mt-1"></div>
+                    </div>
+                </div>
+                <div class="flex justify-between overflow-x-scroll hide-scrollbar py-4 unselectable carousel-group">
+                    <div class="flex-shrink-0">
+                        <div class="flex gap-4  ">
+                            <div><img src="./assets/img/Group0.png" alt="" draggable="false"/></div>
+                            <div class="w-48">
+                                <h1 class="text-lg font-medium">Akame Ga Kill: Season finale</h1>
+                                <p class="text-xs text-[#020202] pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <div class="flex gap-4 ">
+                            <div><img src="./assets/img/Group1.png" alt="" draggable="false"/></div>
+                            <div class="w-48">
+                                <h1 class="text-lg font-medium">Naruto Uzumaki: Hidden Village</h1>
+                                <p class="text-xs text-[#020202] pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex-shrink-0">
+                        <div class="flex gap-4 ">
+                            <div><img src="./assets/img/Group2.png" alt="" draggable="false"/></div>
+                            <div class="w-48">
+                                <h1 class="text-lg font-medium">Love juice Season Priemere</h1>
+                                <p class="text-xs text-[#020202] pt-2">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+        <div class="bg-black text-white">
+            <div class="container mx-auto mt-16">
+                <div class="flex py-16 justify-between">
+                    <div>
+                        <div>
+                            <img
+                                src="assets/logo/Gates1.svg"
+                                alt=""
+                                class="mx-auto sm:mx-0"
+                            />
+                        </div>
+                        <div class="w-full sm:w-[520px] py-6 leading-10">
+                            <p>
+                                Gates is a blog that focuses on Japanese art and
+                                anime. They feature information on Otaku
+                                conventions and other anime topics. Hear from
+                                famous anime filmmakers and artists as well as
+                                plenty of news about the art of cartoon creation
+                                in the Japanese culture.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <Subscribe placeholder="Enter Your Email" />
+                    </div>
+                </div>
+                <div class="border border-white"></div>
+                <div class="py-6 text-center sm:text-left">
+                    &copy; copyright 2021 Gates
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>

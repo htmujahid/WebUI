@@ -1,0 +1,38 @@
+
+* {
+    font-family: 'Poppins', sans-serif;          
+}
+
+#main-heading{
+    font-family: 'Varela', sans-serif;
+}
+
+.background-img{
+    background-image: url('./assets/img/background.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: local;
+    height: calc(100vh - 70px);
+}
+
+.container {
+    width: 100%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.hide-scrollbar {
+    -ms-overflow-style: none;  /* Internet Explorer 10+ */
+    scrollbar-width: none;  /* Firefox */
+}
+.hide-scrollbar::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+}
+
+.unselectable {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+  }

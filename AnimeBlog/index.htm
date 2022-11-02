@@ -1,0 +1,50 @@
+<button className="text-sm border border-2 border-white px-4 py-1 rounded hover:border-blue-500 transition text-white bg-black">{props.label}</button>
+
+<div className="border-b ">
+    <h1 id="main-heading" className="text-4xl font-semibold tracking-[8px]">{props.title}</h1>
+    <div className="border-b-2 border-black w-6 mt-1"></div>
+</div>
+
+<div className="border-b ">
+    <h1 className="text-2xl font-semibold">{props.title}</h1>
+    <div className="border-b-2 border-black w-6 mt-1"></div>
+</div>
+
+['comedy', 'fantasy', 'drama', 'action', 'history', 'military']
+<div className="border-b">
+    <div className="flex gap-10">
+    {titles.map((title)=>{
+        return <h1 className="text-xl font-semibold">{title}</h1>
+    })}
+    </div>
+    <div className="border-b-2 border-black w-14 mt-1"></div>
+</div>
+
+<div className="text-white">
+    <div className="w-96 h-12 bg-zinc-50 flex items-center ">
+        <div className="w-24 h-6 flex items-center justify-center bg-black text-white text-[9px] font-semibold mx-3">
+            {props.label}
+        </div>
+        <div className="flex items-center justify-center text-[#313131] text-xs font-medium mx-3">
+            <input type={props.type} name={props.name} id={props.id} placeholder={props.placeholder} className='focus:outline-none' />
+        </div>
+    </div>
+</div>
+
+<div className="text-white">
+    <div className="w-96 h-12 bg-zinc-50 flex items-center ">
+        <div className="w-24 h-6 flex items-center justify-center bg-black text-white text-[9px] font-semibold mx-3">
+            Subscribe
+        </div>
+        <div className="flex items-center justify-center text-[#313131] text-xs font-medium mx-3">
+            <input type="email" name={props.name} id={props.id} placeholder={props.placeholder} className='focus:outline-none' />
+        </div>
+        <div className="flex items-center justify-center text-[#313131] text-xs font-medium mx-3">
+            <form action="">
+                <button type="submit">
+                    <img src={ArrowRight} alt="" />
+                </button>
+            </form>
+        </div>
+    </div>
+</div>
